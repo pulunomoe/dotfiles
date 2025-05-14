@@ -1,0 +1,116 @@
+### Styles
+
+font pango:Iosevka 10
+output * bg /home/pulu/Pictures/scree.jpg fill
+
+client.focused   #3584e4 #3584e4 #ffffff #3584e4 #3584e4
+client.unfocused #6f8396 #2e2e32 #ffffff #2e2e32 #2e2e32
+client.urgent    #e62d42 #e62d42 #ffffff #e62d42 #e62d42
+
+### Applications
+
+set $mod Mod4
+bindsym $mod+Return exec kgx
+bindsym $mod+d exec wmenu-run -i -f "Iosevka 10" -p "pulu@swift >" -N "2e2e32" -n "ffffff" -M "3584e4" -m "ffffff" -S "3584e4" -s "ffffff"
+bindsym Print exec grim -g "$(slurp)" /home/pulu/Pictures/screenshot-$(date +%Y-%m-%d_%H-%M-%S).png
+
+for_window [app_id="org.gnome.Console"] border pixel 1
+for_window [app_id="org.gnome.Loupe"] border pixel 1
+for_window [app_id="org.gnome.Nautilus"] border pixel 1
+for_window [app_id="org.gnome.Papers"] border pixel 1
+for_window [app_id="org.gnome.TextEditor"] border pixel 1
+for_window [app_id="org.gnome.tweaks"] border pixel 1
+for_window [app_id="firefox"] border pixel 1
+for_window [class="discord"] border pixel 1
+for_window [class="jetbrains-idea"] border pixel 1
+
+for_window [app_id="org.gnome.Calculator"] floating enable
+
+### Windows
+
+bindsym $mod+q kill
+
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+bindsym $mod+b splith
+bindsym $mod+v splitv
+bindsym $mod+f fullscreen
+bindsym $mod+Shift+space floating toggle	
+bindsym $mod+space focus mode_toggle
+
+bindsym $mod+r mode "resize"
+mode "resize" {
+    bindsym Left resize shrink width 5ppt
+    bindsym Down resize grow height 5ppt
+    bindsym Up resize shrink height 5ppt
+    bindsym Right resize grow width 5ppt
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+### Workspaces
+
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws10
+
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws10
+
+### Systems
+
+bindsym $mod+Shift+r reload
+
+bar {
+    status_command i3status
+    workspace_min_width 50
+    separator_symbol /
+
+    colors {
+        statusline #ffffff
+        separator #ffffff
+        background #2e2e32
+        focused_workspace #3584e4 #3584e4 #ffffff
+        inactive_workspace #2e2e32 #2e2e32 #ffffff
+        urgent_workspace #e62d42 #e62d42 #ffffff
+    }
+}
+
+exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+
+include /etc/sway/config.d/*
+

@@ -1,0 +1,49 @@
+general {
+    colors = false
+    interval = 1
+}
+
+order += "cpu_usage"
+order += "cpu_temperature all"
+order += "memory"
+order += "wireless _first_"
+order += "battery all"
+order += "tztime local"
+
+cpu_usage {
+    format = "%usage"
+    separator = false
+}
+
+cpu_temperature "all" {
+    format = "%degrees°C"
+    separator = false
+}
+
+memory {
+    format = "%used"
+    separator_block_width = 25
+}
+
+wireless _first_ {
+    format_up = "%essid"
+    format_down = "No wifi"
+    separator_block_width = 25
+}
+
+battery all {
+    status_chr = "charging"
+    status_bat = "in-use"
+    status_unk = "error"
+    status_full = "full"
+    status_idle = "bypass"
+    last_full_capacity = true
+    format_percentage = "%.00f%s"
+    format = "%percentage (%status)"
+    separator_block_width = 25
+}
+
+tztime local {
+    format = "%a, %d %B %Y %H:%M:%S"
+    separator = false
+}
