@@ -1,0 +1,84 @@
+@import url("file:///etc/xdg/waybar/style.css");
+
+* {
+  font-family: "Iosevka NF";
+  font-size: 9pt;
+}
+
+window#waybar {
+  background-color: rgba(0, 0, 0, 0);
+  border-bottom: 0;
+  color: #ffffff;
+}
+
+#cpu {
+  background-color: rgba(0, 0, 0, 0);
+  color: #ffffff;
+  margin-bottom: 5px;
+}
+
+#temperature {
+  background-color: rgba(0, 0, 0, 0);
+  color: #ffffff;
+  margin-bottom: 5px;
+}
+
+#memory {
+  background-color: rgba(0, 0, 0, 0);
+  color: #ffffff;
+  margin-bottom: 5px;
+}
+
+#network.speed {
+  background-color: rgba(0, 0, 0, 0);
+  color: #ffffff;
+  margin-bottom: 5px;
+}
+
+#network.wifi {
+  background-color: rgba(0, 0, 0, 0);
+  color: #ffffff;
+  margin-bottom: 5px;
+}
+
+#taskbar {
+  background-color: rgba(0, 0, 0, 0);
+  color: #ffffff;
+}
+
+#taskbar button {
+  margin: 0 4px;
+  margin-top: -5px;
+}
+
+#taskbar button:hover {
+  box-shadow: inset 0 -3px #77767b;
+}
+
+#taskbar button.active {
+  box-shadow: inset 0 -3px #77767b;
+}
+
+#tray {
+  background-color: rgba(0, 0, 0, 0);
+  color: #000000;
+  margin-bottom: 5px;
+}
+
+#power-profiles-daemon {
+  background-color: rgba(0, 0, 0, 0);
+  color: #ffffff;
+  margin-bottom: 5px;
+}
+
+#battery {
+  background-color: rgba(0, 0, 0, 0);
+  color: #ffffff;
+  margin-bottom: 5px;
+}
+
+#clock {
+  background-color: rgba(0, 0, 0, 0);
+  color: #ffffff;
+  margin-bottom: 5px;
+}

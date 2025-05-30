@@ -1,8 +1,1 @@
-*
-!.gitignore
-!htop/
-!htop/**
-!i3status/
-!i3status/**
-!sway/
-!sway/**
+.idea
