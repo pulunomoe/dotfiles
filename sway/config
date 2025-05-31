@@ -43,7 +43,7 @@ bindsym $mod+Shift+Right move right
 bindsym $mod+b splith
 bindsym $mod+v splitv
 bindsym $mod+f fullscreen
-bindsym $mod+Shift+space floating toggle	
+bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 
 bindsym $mod+r mode "resize"
@@ -113,4 +113,3 @@ bar {
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
 include /etc/sway/config.d/*
-

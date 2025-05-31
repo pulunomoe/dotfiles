@@ -1,65 +1,65 @@
 {
 	"expand-center": false,
 	"height": 27,
-	"position": "top",
-	"modules-left": [
+  "position": "top",
+  "modules-left": [
 		"cpu",
 		"temperature",
 		"memory",
-		"network#speed"
-	],
-	"modules-center": [
-		"wlr/taskbar"
-	],
-	"modules-right": [
-		"network#wifi",
-		"battery",
-		"power-profiles-daemon",
-		"clock"
-	],
-	"battery": {
-		"format": "󰁹 {capacity}%"
-	},
-	"clock": {
-		"interval": 60,
-		"format": "{:%H:%M}",
-		"tooltip-format": "{:%a, %d %b %Y}"
-	},
-	"cpu": {
-		"interval": 5,
-		"format": "  {usage}% @ {avg_frequency}GHz"
-	},
-	"memory": {
-		"interval": 5,
-		"format": "  {used}GiB",
-		"tooltip-format": "Swap: {swapUsed}GiB"
-	},
-	"network#speed": {
-		"interval": 1,
-		"format": "  {bandwidthUpBytes}   {bandwidthDownBytes}",
-		"tooltip-format": "IP: {ipaddr}"
-	},
-	"network#wifi": {
-		"interval": 5,
-		"format": "  {essid}",
-		"tooltip-format": "Signal: {signalStrength}% ({signaldBm}dBm)"
-	},
-	"power-profiles-daemon": {
-		"format": "{icon}",
-		"format-icons": {
+		"network#speed",
+  ],
+  "modules-center": [
+  		"wlr/taskbar",
+  ],
+  "modules-right": [
+  		"network#wifi",
+  		"battery",
+  		"power-profiles-daemon",
+  		"clock",
+  ],
+  "battery": {
+  		"format": "󰁹 {capacity}%",
+  },
+  "clock": {
+  		"interval": 60,
+  		"format": "{:%H:%M}",
+  		"tooltip-format": "{:%a, %d %b %Y}",
+  },
+  "cpu": {
+  		"interval": 5,
+  		"format": "  {usage}% @ {avg_frequency}GHz",
+  },
+  "memory": {
+  		"interval": 5,
+  		"format": "  {used}GiB",
+  		"tooltip-format": "Swap: {swapUsed}GiB",
+  },
+  "network#speed": {
+  		"interval": 1,
+  		"format": "  {bandwidthUpBytes}   {bandwidthDownBytes}",
+  		"tooltip-format": "IP: {ipaddr}",
+  },
+  "network#wifi": {
+  		"interval": 5,
+  		"format": "  {essid}",
+  		"tooltip-format": "Signal: {signalStrength}% ({signaldBm}dBm)",
+  },
+  "power-profiles-daemon": {
+  		"format": "{icon}",
+	  "format-icons": {
 			"performance": "󰓅",
 			"balanced": "󰾅",
-			"power-saver": "󰾆"
-		}
-	},
-	"temperature": {
-		"interval": 5,
-		"tooltip": false
+			"power-saver": "󰾆",
+		},
+  },
+  "temperature": {
+  		"interval": 5,
+  		"tooltip": false,
 	},
 	"tray": {
 	},
 	"wlr/taskbar": {
 		"icon-theme": "Papirus-Light",
-		"on-click": "minimize-raise"
-	}
+		"on-click": "minimize-raise",
+	},
 }

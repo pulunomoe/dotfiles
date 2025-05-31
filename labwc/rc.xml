@@ -65,6 +65,13 @@
     <keybind key="W-S-4">
       <action name="SendToDesktop" to="4" />
     </keybind>
+    <keybind key="Print">
+    	<action name="Execute">
+		  	<command>
+		  		sh -c 'grim -g "$(slurp)" /home/pulu/Pictures/screenshot-$(date +%Y-%m-%d_%H-%M-%S).png'
+		  	</command>
+    	</action>
+    </keybind>
   </keyboard>
 
   <mouse>
