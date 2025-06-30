@@ -6,79 +6,94 @@
 }
 
 window#waybar {
-  background-color: rgba(0, 0, 0, 0);
+  background-color: rgba(239, 241, 245, 0.9);
+  color: #4c4f69;
   border-bottom: 0;
-  color: #ffffff;
 }
 
-#cpu {
-  background-color: rgba(0, 0, 0, 0);
-  color: #ffffff;
-  margin-bottom: 5px;
+#workspaces button {
+  color: #4c4f69;
 }
 
-#temperature {
-  background-color: rgba(0, 0, 0, 0);
-  color: #ffffff;
-  margin-bottom: 5px;
+#workspaces button:hover {
+  background: rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 0 #eff1f5;
 }
 
-#memory {
-  background-color: rgba(0, 0, 0, 0);
-  color: #ffffff;
-  margin-bottom: 5px;
+#workspaces button.focused {
+  background-color: #7287fd;
+  box-shadow: inset 0 0 #eff1f5;
+  color: #eff1f5;
 }
 
-#network.speed {
-  background-color: rgba(0, 0, 0, 0);
-  color: #ffffff;
-  margin-bottom: 5px;
+#workspaces button.urgent {
+  background-color: #d20f39;
 }
 
-#network.wifi {
-  background-color: rgba(0, 0, 0, 0);
-  color: #ffffff;
-  margin-bottom: 5px;
-}
-
-#taskbar {
-  background-color: rgba(0, 0, 0, 0);
-  color: #ffffff;
-}
-
-#taskbar button {
-  margin: 0 4px;
-  margin-top: -5px;
-}
-
-#taskbar button:hover {
-  box-shadow: inset 0 -3px #77767b;
-}
-
-#taskbar button.active {
-  box-shadow: inset 0 -3px #77767b;
-}
-
-#tray {
-  background-color: rgba(0, 0, 0, 0);
-  color: #000000;
-  margin-bottom: 5px;
-}
-
-#power-profiles-daemon {
-  background-color: rgba(0, 0, 0, 0);
-  color: #ffffff;
-  margin-bottom: 5px;
-}
-
-#battery {
-  background-color: rgba(0, 0, 0, 0);
-  color: #ffffff;
-  margin-bottom: 5px;
+#mode {
+  background-color: #04a5e5;
+  box-shadow: inset 0 0 #eff1f5;
 }
 
 #clock {
   background-color: rgba(0, 0, 0, 0);
-  color: #ffffff;
-  margin-bottom: 5px;
+  color: #4c4f69;
+}
+
+#cpu {
+  background-color: rgba(0, 0, 0, 0);
+  color: #4c4f69;
+}
+
+#temperature {
+  background-color: rgba(0, 0, 0, 0);
+  color: #4c4f69;
+}
+
+#memory {
+  background-color: rgba(0, 0, 0, 0);
+  color: #4c4f69;
+}
+
+#network.wifi {
+  background-color: rgba(0, 0, 0, 0);
+  color: #4c4f69;
+}
+
+#network.disconnected {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+#battery {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+#battery.charging, #battery.plugged {
+  background-color: rgba(0, 0, 0, 0);
+  color: #4c4f69;
+}
+
+#power-profiles-daemon.performance {
+  background-color: rgba(0, 0, 0, 0);
+  color: #4c4f69;
+}
+
+#power-profiles-daemon.balanced {
+  background-color: rgba(0, 0, 0, 0);
+  color: #4c4f69;
+}
+
+#power-profiles-daemon.power-saver {
+  background-color: rgba(0, 0, 0, 0);
+  color: #4c4f69;
+}
+
+#backlight {
+  background-color: rgba(0, 0, 0, 0);
+  color: #4c4f69;
+}
+
+#wireplumber {
+  background-color: rgba(0, 0, 0, 0);
+  color: #4c4f69;
 }

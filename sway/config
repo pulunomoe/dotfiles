@@ -1,30 +1,23 @@
 ### Styles
 
-font pango:Iosevka 10
-output * bg /home/pulu/Pictures/scree.jpg fill
+font pango:Iosevka NF 10
+output * bg /home/pulu/Pictures/miyako.png fill
 
-client.focused   #3584e4 #3584e4 #ffffff #3584e4 #3584e4
-client.unfocused #6f8396 #2e2e32 #ffffff #2e2e32 #2e2e32
-client.urgent    #e62d42 #e62d42 #ffffff #e62d42 #e62d42
+client.focused   #7287fd #7287fd #ffffff #7287fd #7287fd
+client.unfocused #eff1f5 #eff1f5 #ffffff #eff1f5 #eff1f5
+client.urgent    #d20f39 #d20f39 #ffffff #d20f39 #d20f39
 
 ### Applications
 
 set $mod Mod4
-bindsym $mod+Return exec kgx
-bindsym $mod+d exec wmenu-run -i -f "Iosevka 10" -p "pulu@swift >" -N "2e2e32" -n "ffffff" -M "3584e4" -m "ffffff" -S "3584e4" -s "ffffff"
+bindsym $mod+d exec wofi -S drun -W 300 -I -i
+bindsym $mod+e exec pcmanfm
+bindsym $mod+l exec swaylock
+bindsym $mod+Return exec foot
 bindsym Print exec grim -g "$(slurp)" /home/pulu/Pictures/screenshot-$(date +%Y-%m-%d_%H-%M-%S).png
 
-for_window [app_id="org.gnome.Console"] border pixel 1
-for_window [app_id="org.gnome.Loupe"] border pixel 1
-for_window [app_id="org.gnome.Nautilus"] border pixel 1
-for_window [app_id="org.gnome.Papers"] border pixel 1
-for_window [app_id="org.gnome.TextEditor"] border pixel 1
-for_window [app_id="org.gnome.tweaks"] border pixel 1
-for_window [app_id="firefox"] border pixel 1
-for_window [class="discord"] border pixel 1
-for_window [class="jetbrains-idea"] border pixel 1
-
-for_window [app_id="org.gnome.Calculator"] floating enable
+for_window [app_id=".*"] opacity 0.98
+for_window [app_id=".*"] border pixel 2
 
 ### Windows
 
@@ -93,23 +86,10 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 
 ### Systems
 
+focus_follows_mouse no
 bindsym $mod+Shift+r reload
 
-bar {
-    status_command i3status
-    workspace_min_width 50
-    separator_symbol /
-
-    colors {
-        statusline #ffffff
-        separator #ffffff
-        background #2e2e32
-        focused_workspace #3584e4 #3584e4 #ffffff
-        inactive_workspace #2e2e32 #2e2e32 #ffffff
-        urgent_workspace #e62d42 #e62d42 #ffffff
-    }
-}
-
+exec waybar &
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
 include /etc/sway/config.d/*
