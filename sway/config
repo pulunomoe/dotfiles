@@ -17,7 +17,7 @@ client.urgent           #da4453 #da4453 #ffffff #da4453 #da4453
 ### Applications
 
 set $mod Mod4
-bindsym $mod+d exec wmenu-run
+bindsym $mod+d exec fuzzel
 bindsym $mod+e exec thunar
 bindsym $mod+l exec swaylock
 bindsym $mod+Return exec foot
