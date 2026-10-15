@@ -10,6 +10,7 @@
 #      install/services-user.txt
 #   3. symlink every top-level config in this repo into ~/.config and set
 #      fish as the login shell
+#   4. apply the PHP configuration (install/php.sh)
 #
 # Run it as your normal user (it calls sudo when it needs root), not as root.
 #
@@ -30,6 +31,7 @@ EXCLUDE=(install)
 DO_PACKAGES=1
 DO_SERVICES=1
 DO_DOTFILES=1
+DO_PHP=1
 
 log()  { printf '\033[1;34m==>\033[0m %s\n' "$*"; }
 ok()   { printf '\033[1;32m  ok\033[0m %s\n' "$*"; }
@@ -43,6 +45,7 @@ Options:
   --skip-packages    don't install the package list
   --skip-services    don't enable systemd services
   --skip-dotfiles    don't symlink configs or change the shell
+  --skip-php         don't apply the PHP configuration
   -h, --help         show this help
 EOF
 }
@@ -52,6 +55,7 @@ while [[ $# -gt 0 ]]; do
     --skip-packages) DO_PACKAGES=0 ;;
     --skip-services) DO_SERVICES=0 ;;
     --skip-dotfiles) DO_DOTFILES=0 ;;
+    --skip-php) DO_PHP=0 ;;
     -h|--help) usage; exit 0 ;;
     *) warn "unknown option: $1"; usage; exit 1 ;;
   esac
@@ -160,6 +164,11 @@ setup_shell() {
   fi
 }
 
+configure_php() {
+  log "Configuring PHP"
+  "$SCRIPT_DIR/php.sh"
+}
+
 print_followups() {
   cat <<EOF
 
@@ -190,6 +199,7 @@ main() {
     deploy_dotfiles
     setup_shell
   fi
+  (( DO_PHP )) && configure_php
   print_followups
   log "Done."
 }
