@@ -1,23 +1,27 @@
 ### Styles
 
 font pango:Iosevka NF 10
-output * bg /home/pulu/Pictures/miyako.png fill
+# output * bg /home/pulu/Pictures/miyako.png fill
+output eDP-1 {
+    scale 1.25
+    color_profile icc /home/pulu/Documents/Color\ profiles/_DisplayP3.icm
+    render_bit_depth 10
+}
 
-client.focused   #7287fd #7287fd #ffffff #7287fd #7287fd
-client.unfocused #eff1f5 #eff1f5 #ffffff #eff1f5 #eff1f5
-client.urgent    #d20f39 #d20f39 #ffffff #d20f39 #d20f39
+# Breeze Light (KDE palette)
+client.focused          #3daee9 #3daee9 #ffffff #3daee9 #3daee9
+client.focused_inactive #707d8a #eff0f1 #232629 #707d8a #707d8a
+client.unfocused        #bdc3c7 #eff0f1 #232629 #bdc3c7 #bdc3c7
+client.urgent           #da4453 #da4453 #ffffff #da4453 #da4453
 
 ### Applications
 
 set $mod Mod4
-bindsym $mod+d exec wofi -S drun -W 300 -I -i
-bindsym $mod+e exec pcmanfm
+bindsym $mod+d exec wmenu-run
+bindsym $mod+e exec thunar
 bindsym $mod+l exec swaylock
 bindsym $mod+Return exec foot
 bindsym Print exec grim -g "$(slurp)" /home/pulu/Pictures/screenshot-$(date +%Y-%m-%d_%H-%M-%S).png
-
-for_window [app_id=".*"] opacity 0.98
-for_window [app_id=".*"] border pixel 2
 
 ### Windows
 

@@ -6,58 +6,59 @@
 }
 
 window#waybar {
-  background-color: rgba(239, 241, 245, 0.9);
-  color: #4c4f69;
+  background-color: rgba(239, 240, 241, 0.9);
+  color: #232629;
   border-bottom: 0;
 }
 
 #workspaces button {
-  color: #4c4f69;
+  color: #232629;
 }
 
 #workspaces button:hover {
-  background: rgba(0, 0, 0, 0.2);
-  box-shadow: inset 0 0 #eff1f5;
+  background: rgba(35, 38, 41, 0.12);
+  box-shadow: inset 0 0 #eff0f1;
 }
 
 #workspaces button.focused {
-  background-color: #7287fd;
-  box-shadow: inset 0 0 #eff1f5;
-  color: #eff1f5;
+  background-color: #3daee9;
+  box-shadow: inset 0 0 #eff0f1;
+  color: #ffffff;
 }
 
 #workspaces button.urgent {
-  background-color: #d20f39;
+  background-color: #da4453;
 }
 
 #mode {
-  background-color: #04a5e5;
-  box-shadow: inset 0 0 #eff1f5;
+  background-color: #3daee9;
+  box-shadow: inset 0 0 #eff0f1;
+  color: #ffffff;
 }
 
 #clock {
   background-color: rgba(0, 0, 0, 0);
-  color: #4c4f69;
+  color: #232629;
 }
 
 #cpu {
   background-color: rgba(0, 0, 0, 0);
-  color: #4c4f69;
+  color: #232629;
 }
 
 #temperature {
   background-color: rgba(0, 0, 0, 0);
-  color: #4c4f69;
+  color: #232629;
 }
 
 #memory {
   background-color: rgba(0, 0, 0, 0);
-  color: #4c4f69;
+  color: #232629;
 }
 
 #network.wifi {
   background-color: rgba(0, 0, 0, 0);
-  color: #4c4f69;
+  color: #232629;
 }
 
 #network.disconnected {
@@ -70,30 +71,30 @@ window#waybar {
 
 #battery.charging, #battery.plugged {
   background-color: rgba(0, 0, 0, 0);
-  color: #4c4f69;
+  color: #232629;
 }
 
 #power-profiles-daemon.performance {
   background-color: rgba(0, 0, 0, 0);
-  color: #4c4f69;
+  color: #232629;
 }
 
 #power-profiles-daemon.balanced {
   background-color: rgba(0, 0, 0, 0);
-  color: #4c4f69;
+  color: #232629;
 }
 
 #power-profiles-daemon.power-saver {
   background-color: rgba(0, 0, 0, 0);
-  color: #4c4f69;
+  color: #232629;
 }
 
 #backlight {
   background-color: rgba(0, 0, 0, 0);
-  color: #4c4f69;
+  color: #232629;
 }
 
 #wireplumber {
   background-color: rgba(0, 0, 0, 0);
-  color: #4c4f69;
+  color: #232629;
 }

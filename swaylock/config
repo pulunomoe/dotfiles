@@ -1,2 +1,28 @@
-image=~/Pictures/scree-nord.jpg
-font=Iosevka
+font=Iosevka NF
+
+# Breeze Light (KDE palette)
+color=000000ff
+inside-color=ffffffff
+inside-clear-color=ffffffff
+inside-ver-color=ffffffff
+inside-wrong-color=ffffffff
+inside-caps-lock-color=ffffffff
+
+ring-color=3daee9ff
+ring-clear-color=3daee9ff
+ring-ver-color=27ae60ff
+ring-wrong-color=da4453ff
+ring-caps-lock-color=f67400ff
+
+text-color=232629ff
+text-clear-color=232629ff
+text-ver-color=232629ff
+text-wrong-color=232629ff
+text-caps-lock-color=232629ff
+
+key-hl-color=27ae60ff
+bs-hl-color=da4453ff
+caps-lock-key-hl-color=f67400ff
+caps-lock-bs-hl-color=da4453ff
+
+separator-color=eff0f100

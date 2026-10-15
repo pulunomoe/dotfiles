@@ -1,79 +1,79 @@
 {
-	"expand-center": false,
-	"height": 20,
+  "expand-center": false,
+  "height": 20,
   "position": "top",
   "modules-left": [
-		"sway/workspaces",
-		"sway/mode",
-		"sway/window",
+    "sway/workspaces",
+    "sway/mode",
+    "sway/window"
   ],
   "modules-center": [
-		"clock",
+    "clock"
   ],
   "modules-right": [
-	  "cpu",
-	  "temperature",
-	  "memory",
-		"network#wifi",
-		"battery",
-		"power-profiles-daemon",
-		"backlight",
-		"wireplumber",
+    "cpu",
+    "temperature",
+    "memory",
+    "network#wifi",
+    "battery",
+    "power-profiles-daemon",
+    "backlight",
+    "wireplumber"
   ],
-	"sway/workspaces": {
-	  "disable-scroll-wraparound": true,
-	  "format": " {name} ",
-	},
-	"sway/window": {
-	  "expand": true,
-	  "icon": true,
-	  "icon-size": 14
-	},
+  "sway/workspaces": {
+    "disable-scroll-wraparound": true,
+    "format": " {name} "
+  },
+  "sway/window": {
+    "expand": true,
+    "icon": true,
+    "icon-size": 14
+  },
   "cpu": {
-		"interval": 5,
-		"format": "󰇺  {avg_frequency} GHz",
+    "interval": 5,
+    "format": "󰇺  {avg_frequency} GHz"
   },
   "temperature": {
-		"interval": 5,
-		"tooltip": false,
-		"format": "󰏈  {temperatureC} °C",
-	},
+    "interval": 5,
+    "tooltip": false,
+    "format": "󰏈  {temperatureC} °C"
+  },
   "memory": {
-		"interval": 5,
-		"format": "󰏇  {used} GiB",
-		"tooltip-format": "Swap: {swapUsed}GiB",
+    "interval": 5,
+    "format": "󰏇  {used} GiB",
+    "tooltip-format": "Swap: {swapUsed}GiB"
   },
   "network#speed": {
-		"interval": 1,
-		"format": "  {bandwidthUpBytes}   {bandwidthDownBytes}",
-		"tooltip-format": "IP: {ipaddr}",
+    "interval": 1,
+    "format": "  {bandwidthUpBytes}   {bandwidthDownBytes}",
+    "tooltip-format": "IP: {ipaddr}"
   },
   "network#wifi": {
-		"interval": 5,
-		"format": "  {essid}",
-		"tooltip-format": "Signal: {signalStrength}% ({signaldBm}dBm)",
+    "interval": 5,
+    "format": "  {essid}",
+    "tooltip-format": "Signal: {signalStrength}% ({signaldBm}dBm)"
   },
   "battery": {
-		"format": "󰄌  {capacity} %",
+    "format": "󰄌  {capacity} %"
   },
   "power-profiles-daemon": {
-		"format": "󰊚  {icon}",
-	  "format-icons": {
-			"performance": "Eco",
-			"balanced": "Normal",
-			"power-saver": "Boost",
-		},
+    "format": "󰊚  {icon}",
+    "format-icons": {
+      "performance": "Eco",
+      "balanced": "Normal",
+      "power-saver": "Boost"
+    }
   },
   "backlight": {
     "format": "󰱊  {percent} %",
-		"tooltip": false,
+    "tooltip": false
   },
   "wireplumber": {
-    "format": "  {volume} %",
+    "format": "  {volume} %"
   },
   "clock": {
-		"interval": 60,
-		"format": "{:%a, %d %b %Y - %H:%M}",
-		"tooltip": false,
-  },
+    "interval": 60,
+    "format": "{:%a, %d %b %Y - %H:%M}",
+    "tooltip": false
+  }
 }
