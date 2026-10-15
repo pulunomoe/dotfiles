@@ -1,0 +1,103 @@
+# Explicitly installed pacman packages for this machine.
+# Installed by install/bootstrap.sh with: pacman -Syu --needed
+# Lines starting with # and blank lines are ignored.
+
+# --- base system, boot, firmware -------------------------------------------
+base
+sudo
+linux
+linux-firmware
+mkinitcpio
+intel-ucode
+nvidia-open
+efibootmgr
+
+# --- networking, bluetooth, power ------------------------------------------
+networkmanager
+wpa_supplicant
+bluez
+bluez-utils
+bluetui
+sof-firmware
+reflector
+tuned
+tuned-ppd
+zram-generator
+fuse2
+
+# --- shell & cli -----------------------------------------------------------
+fish
+nano
+git
+htop
+fastfetch
+7zip
+unrar
+unzip
+ntfsprogs
+
+# --- wayland / sway --------------------------------------------------------
+sway
+swaybg
+swayidle
+swaylock
+foot
+fuzzel
+mako
+waybar
+brightnessctl
+xorg-xwayland
+xdg-desktop-portal-wlr
+xdg-desktop-portal-gtk
+xdg-user-dirs-gtk
+polkit-gnome
+
+# --- audio -----------------------------------------------------------------
+pipewire
+pipewire-alsa
+pipewire-jack
+pipewire-pulse
+gst-plugin-pipewire
+libpulse
+wireplumber
+
+# --- theming & fonts -------------------------------------------------------
+papirus-icon-theme
+breeze-gtk
+noto-fonts
+noto-fonts-cjk
+noto-fonts-emoji
+ttf-dejavu
+ttf-fira-sans
+ttf-iosevka-nerd
+ttf-liberation
+matugen
+
+# --- desktop apps ----------------------------------------------------------
+thunar
+thunar-volman
+thunar-archive-plugin
+gvfs
+mousepad
+ristretto
+xarchiver
+libreoffice-fresh
+librewolf
+discord
+
+# --- development -----------------------------------------------------------
+composer
+php
+php-gd
+php-igbinary
+php-imagick
+php-pgsql
+php-sodium
+php-sqlite
+xdebug
+nodejs
+pnpm
+jdk-openjdk
+opencode
+podman
+podman-compose

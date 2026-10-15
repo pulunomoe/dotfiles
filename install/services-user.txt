@@ -1,0 +1,7 @@
+# Per-user systemd units to enable (systemctl --user).
+pipewire.socket
+pipewire-pulse.socket
+wireplumber.service
+xdg-user-dirs.service
+podman.socket
+p11-kit-server.socket

@@ -1,0 +1,6 @@
+# System-level systemd units to enable.
+systemd-timesyncd.service
+NetworkManager.service
+bluetooth.service
+tuned.service
+fstrim.timer
