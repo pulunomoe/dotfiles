@@ -1,0 +1,47 @@
+# ~/.config/matugen/config.toml
+# Generate color schemes from the wallpaper and write them into each app's config.
+#
+# Usage:
+#   matugen-wallpaper [image] [light|dark]
+# or directly:
+#   matugen image /path/to/wallpaper.jpg --mode light --prefer saturation
+
+[config]
+
+# foot terminal colors
+# foot-palette is a partial (no output_path) shared by the light/dark sections.
+[templates.foot-palette]
+input_path = "~/.config/matugen/templates/foot-palette"
+
+[templates.foot]
+input_path = "~/.config/matugen/templates/foot.ini"
+output_path = "~/.config/foot/colors.ini"
+
+# fuzzel launcher (regenerates the whole file)
+[templates.fuzzel]
+input_path = "~/.config/matugen/templates/fuzzel.ini"
+output_path = "~/.config/fuzzel/fuzzel.ini"
+
+# waybar colors (imported by ~/.config/waybar/style.css)
+[templates.waybar]
+input_path = "~/.config/matugen/templates/waybar.css"
+output_path = "~/.config/waybar/colors.css"
+
+# mako notifications (included by ~/.config/mako/config)
+[templates.mako]
+input_path = "~/.config/matugen/templates/mako"
+output_path = "~/.config/mako/colors"
+
+# sway window borders/titlebar (included by ~/.config/sway/config)
+[templates.sway]
+input_path = "~/.config/matugen/templates/sway-colors"
+output_path = "~/.config/sway/colors"
+
+# GTK 3 / GTK 4 (Breeze + libadwaita recolored to match the wallpaper)
+[templates.gtk3]
+input_path = "~/.config/matugen/templates/gtk-breeze.css"
+output_path = "~/.config/gtk-3.0/gtk.css"
+
+[templates.gtk4]
+input_path = "~/.config/matugen/templates/gtk-breeze.css"
+output_path = "~/.config/gtk-4.0/gtk.css"
