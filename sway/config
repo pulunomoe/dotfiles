@@ -1,18 +1,14 @@
 ### Styles
 
-font pango:Iosevka NF 10
-# output * bg /home/pulu/Pictures/miyako.png fill
+font pango:Iosevka NF 11
 output eDP-1 {
     scale 1.25
-    color_profile icc /home/pulu/Documents/Color\ profiles/_DisplayP3.icm
+    color_profile icc /home/pulu/Documents/Profiles/_DisplayP3.icm
     render_bit_depth 10
 }
 
-# Breeze Light (KDE palette)
-client.focused          #3daee9 #3daee9 #ffffff #3daee9 #3daee9
-client.focused_inactive #707d8a #eff0f1 #232629 #707d8a #707d8a
-client.unfocused        #bdc3c7 #eff0f1 #232629 #bdc3c7 #bdc3c7
-client.urgent           #da4453 #da4453 #ffffff #da4453 #da4453
+# Colors generated from the wallpaper by matugen (run: matugen-wallpaper)
+include /home/pulu/.config/sway/colors
 
 ### Applications
 
@@ -22,6 +18,9 @@ bindsym $mod+e exec thunar
 bindsym $mod+l exec swaylock
 bindsym $mod+Return exec foot
 bindsym Print exec grim -g "$(slurp)" /home/pulu/Pictures/screenshot-$(date +%Y-%m-%d_%H-%M-%S).png
+
+for_window [app_id="librewolf"] border pixel 1
+for_window [class="discord"] border pixel 1
 
 ### Windows
 
@@ -94,6 +93,7 @@ focus_follows_mouse no
 bindsym $mod+Shift+r reload
 
 exec waybar &
+exec /home/pulu/.local/bin/matugen-wallpaper &
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
 include /etc/sway/config.d/*

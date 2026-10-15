@@ -1,6 +1,6 @@
 {
   "expand-center": false,
-  "height": 20,
+  "height": 25,
   "position": "top",
   "modules-left": [
     "sway/workspaces",
@@ -30,16 +30,16 @@
     "icon-size": 14
   },
   "cpu": {
-    "interval": 5,
+    "interval": 2,
     "format": "󰇺  {avg_frequency} GHz"
   },
   "temperature": {
-    "interval": 5,
+    "interval": 2,
     "tooltip": false,
     "format": "󰏈  {temperatureC} °C"
   },
   "memory": {
-    "interval": 5,
+    "interval": 2,
     "format": "󰏇  {used} GiB",
     "tooltip-format": "Swap: {swapUsed}GiB"
   },
@@ -49,7 +49,7 @@
     "tooltip-format": "IP: {ipaddr}"
   },
   "network#wifi": {
-    "interval": 5,
+    "interval": 10,
     "format": "  {essid}",
     "tooltip-format": "Signal: {signalStrength}% ({signaldBm}dBm)"
   },
@@ -60,7 +60,7 @@
     "format": "󰊚  {icon}",
     "format-icons": {
       "performance": "Eco",
-      "balanced": "Normal",
+      "balanced": "Cruise",
       "power-saver": "Boost"
     }
   },

@@ -1,13 +1,9 @@
 # ~/.config/mako/config
-# Breeze Light (KDE palette)
+include=/home/pulu/.config/mako/colors
 
 font=Iosevka NF 10
-background-color=#eff0f1f2
-text-color=#232629ff
-border-color=#3daee9ff
 border-size=2
 border-radius=4
-progress-color=over #3daee9ff
 
 padding=8
 margin=8
@@ -21,11 +17,8 @@ max-icon-size=48
 markup=1
 
 [urgency=low]
-border-color=#707d8aff
 
 [urgency=normal]
-border-color=#3daee9ff
 
 [urgency=critical]
-border-color=#da4453ff
 default-timeout=0

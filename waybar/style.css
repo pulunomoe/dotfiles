@@ -1,100 +1,59 @@
 @import url("file:///etc/xdg/waybar/style.css");
+@import "colors.css";
 
 * {
   font-family: "Iosevka NF";
-  font-size: 9pt;
+  font-size: 11pt;
 }
 
 window#waybar {
-  background-color: rgba(239, 240, 241, 0.9);
-  color: #232629;
+  background-color: @bg;
+  color: @fg;
   border-bottom: 0;
 }
 
 #workspaces button {
-  color: #232629;
+  color: @fg;
 }
 
 #workspaces button:hover {
-  background: rgba(35, 38, 41, 0.12);
-  box-shadow: inset 0 0 #eff0f1;
+  background: alpha(@fg, 0.12);
+  box-shadow: inset 0 0 @bg;
 }
 
 #workspaces button.focused {
-  background-color: #3daee9;
-  box-shadow: inset 0 0 #eff0f1;
-  color: #ffffff;
+  background-color: @primary;
+  box-shadow: inset 0 0 @bg;
+  color: @on_primary;
 }
 
 #workspaces button.urgent {
-  background-color: #da4453;
+  background-color: @error;
 }
 
 #mode {
-  background-color: #3daee9;
-  box-shadow: inset 0 0 #eff0f1;
-  color: #ffffff;
+  background-color: @primary;
+  box-shadow: inset 0 0 @bg;
+  color: @on_primary;
 }
 
-#clock {
-  background-color: rgba(0, 0, 0, 0);
-  color: #232629;
-}
-
-#cpu {
-  background-color: rgba(0, 0, 0, 0);
-  color: #232629;
-}
-
-#temperature {
-  background-color: rgba(0, 0, 0, 0);
-  color: #232629;
-}
-
-#memory {
-  background-color: rgba(0, 0, 0, 0);
-  color: #232629;
-}
-
-#network.wifi {
-  background-color: rgba(0, 0, 0, 0);
-  color: #232629;
+#clock,
+#cpu,
+#temperature,
+#memory,
+#network.wifi,
+#battery,
+#battery.charging,
+#battery.plugged,
+#power-profiles-daemon.performance,
+#power-profiles-daemon.balanced,
+#power-profiles-daemon.power-saver,
+#backlight,
+#wireplumber {
+  background-color: transparent;
+  color: @fg;
 }
 
 #network.disconnected {
-  background-color: rgba(0, 0, 0, 0);
-}
-
-#battery {
-  background-color: rgba(0, 0, 0, 0);
-}
-
-#battery.charging, #battery.plugged {
-  background-color: rgba(0, 0, 0, 0);
-  color: #232629;
-}
-
-#power-profiles-daemon.performance {
-  background-color: rgba(0, 0, 0, 0);
-  color: #232629;
-}
-
-#power-profiles-daemon.balanced {
-  background-color: rgba(0, 0, 0, 0);
-  color: #232629;
-}
-
-#power-profiles-daemon.power-saver {
-  background-color: rgba(0, 0, 0, 0);
-  color: #232629;
-}
-
-#backlight {
-  background-color: rgba(0, 0, 0, 0);
-  color: #232629;
-}
-
-#wireplumber {
-  background-color: rgba(0, 0, 0, 0);
-  color: #232629;
+  background-color: transparent;
 }
