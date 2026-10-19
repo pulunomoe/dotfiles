@@ -19,7 +19,7 @@ bindsym $mod+l exec swaylock
 bindsym $mod+Return exec foot
 bindsym Print exec grim -g "$(slurp)" /home/pulu/Pictures/screenshot-$(date +%Y-%m-%d_%H-%M-%S).png
 
-for_window [app_id="librewolf"] border pixel 1
+for_window [app_id="firefox"] border none
 for_window [app_id="discord"] border none
 for_window [class="discord"] border none
 for_window [app_id="jetbrains-idea"] border none
@@ -95,8 +95,8 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 focus_follows_mouse no
 bindsym $mod+Shift+r reload
 
-exec waybar &
-exec /home/pulu/.local/bin/matugen-wallpaper &
-exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+exec sh -c '/home/pulu/.local/bin/matugen-wallpaper; exec /usr/bin/waybar'
+exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec swayidle -w
 
 include /etc/sway/config.d/*

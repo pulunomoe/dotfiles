@@ -37,6 +37,11 @@ output_path = "~/.config/mako/colors"
 input_path = "~/.config/matugen/templates/sway-colors"
 output_path = "~/.config/sway/colors"
 
+# labwc window borders/titlebar/menus (full themerc-override)
+[templates.labwc]
+input_path = "~/.config/matugen/templates/labwc-themerc"
+output_path = "~/.config/labwc/themerc-override"
+
 # GTK 3 / GTK 4 (Breeze + libadwaita recolored to match the wallpaper)
 [templates.gtk3]
 input_path = "~/.config/matugen/templates/gtk-breeze.css"

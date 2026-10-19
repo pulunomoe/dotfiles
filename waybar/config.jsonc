@@ -1,6 +1,6 @@
 {
   "expand-center": false,
-  "height": 25,
+  "height": 40,
   "position": "top",
   "modules-left": [
     "sway/workspaces",
@@ -18,7 +18,8 @@
     "battery",
     "temperature#ambient",
     "backlight",
-    "wireplumber"
+    "wireplumber",
+    "tray"
   ],
   "sway/workspaces": {
     "disable-scroll-wraparound": true,
@@ -59,7 +60,7 @@
     "format": "  {capacity} %"
   },
   "power-profiles-daemon": {
-    "format": "󱀚  {icon}",
+    "format": "󱀚  {icon} ",
     "format-icons": {
       "performance": "󰢾",
       "balanced": "󰢽",
@@ -72,6 +73,10 @@
   },
   "wireplumber": {
     "format": "  {volume} %"
+  },
+  "tray": {
+    "icon-size": 16,
+    "spacing": 8
   },
   "clock": {
     "interval": 60,

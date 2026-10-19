@@ -1,5 +1,6 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
+SETUVAR --export PARALLEL_API_KEY:amz\x2d0dkEtWc\x2dK2YP9MXDRIJBRO6053CZKnustOwv
 SETUVAR --export SWAY_UNSUPPORTED_GPU:true
 SETUVAR __fish_initialized:4300
 SETUVAR fish_greeting:\x1d

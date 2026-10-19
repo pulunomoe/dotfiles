@@ -4,14 +4,21 @@
 
   <theme>
     <name>labwc</name>
-    <cornerRadius>0</cornerRadius>
+    <cornerRadius>8</cornerRadius>
+    <dropShadows>yes</dropShadows>
     <icon>Papirus-Light</icon>
-    <font name="Iosevka NF" size="10" />
+    <font name="Iosevka NF" size="14" />
   </theme>
   
   <desktops number="4">
   	<prefix>></prefix>
   </desktops>
+
+  <snapping>
+    <range inner="10" outer="10" />
+    <topMaximize>yes</topMaximize>
+    <notifyClient>always</notifyClient>
+  </snapping>
   
   <windowSwitcher allWorkspaces="yes">
   	<fields>
@@ -27,16 +34,56 @@
       <action name="Execute" command="foot" />
     </keybind>
     <keybind key="W-d">
-      <action name="Execute" command="wofi -S drun -W 300 -I -i" />
+      <action name="Execute" command="fuzzel" />
     </keybind>
     <keybind key="W-e">
-      <action name="Execute" command="pcmanfm" />
+      <action name="Execute" command="thunar" />
     </keybind>
     <keybind key="W-l">
       <action name="Execute" command="swaylock" />
     </keybind>
     <keybind key="W-q">
       <action name="Close" />
+    </keybind>
+    <!-- Windows/KDE-style manual tiling -->
+    <keybind key="W-Left">
+      <action name="SnapToEdge" direction="left" combine="yes" />
+    </keybind>
+    <keybind key="W-Right">
+      <action name="SnapToEdge" direction="right" combine="yes" />
+    </keybind>
+    <keybind key="W-Up">
+      <action name="ToggleMaximize" />
+    </keybind>
+    <keybind key="W-Down">
+      <action name="SnapToEdge" direction="down" combine="yes" />
+    </keybind>
+    <keybind key="W-S-Left">
+      <action name="MoveToEdge" direction="left" snapWindows="yes" />
+    </keybind>
+    <keybind key="W-S-Right">
+      <action name="MoveToEdge" direction="right" snapWindows="yes" />
+    </keybind>
+    <keybind key="W-S-Up">
+      <action name="MoveToEdge" direction="up" snapWindows="yes" />
+    </keybind>
+    <keybind key="W-S-Down">
+      <action name="MoveToEdge" direction="down" snapWindows="yes" />
+    </keybind>
+    <keybind key="W-c">
+      <action name="SnapToEdge" direction="center" />
+    </keybind>
+    <keybind key="W-m">
+      <action name="Iconify" />
+    </keybind>
+    <keybind key="W-f">
+      <action name="ToggleMaximize" />
+    </keybind>
+    <keybind key="W-S-f">
+      <action name="ToggleFullscreen" />
+    </keybind>
+    <keybind key="A-Space">
+      <action name="ShowMenu" menu="client-menu" atCursor="no" />
     </keybind>
     <keybind key="W-S-r">
       <action name="Reconfigure" />

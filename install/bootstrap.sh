@@ -8,7 +8,8 @@
 #   1. full system upgrade + install every package in install/packages.txt
 #   2. enable the systemd units in install/services-system.txt and
 #      install/services-user.txt
-#   3. symlink every top-level config in this repo into ~/.config and set
+#   3. symlink every top-level config in this repo into ~/.config, mirror the
+#      home/ tree into ~ and set
 #      fish as the login shell
 #   4. apply the PHP configuration (install/php.sh)
 #
@@ -19,6 +20,7 @@ set -euo pipefail
 SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
 DOTFILES_DIR="$(cd -- "$SCRIPT_DIR/.." && pwd)"
 CONFIG_DIR="${XDG_CONFIG_HOME:-$HOME/.config}"
+HOME_ITEMS_DIR="$DOTFILES_DIR/home"
 
 PKG_FILE="$SCRIPT_DIR/packages.txt"
 SYSTEM_SERVICES_FILE="$SCRIPT_DIR/services-system.txt"
@@ -26,7 +28,9 @@ USER_SERVICES_FILE="$SCRIPT_DIR/services-user.txt"
 
 # Top-level names in the repo that are NOT configs to deploy into ~/.config.
 # (Everything else in the repo root is treated as a ~/.config/<name> entry.)
-EXCLUDE=(install)
+# "home" mirrors $HOME (for ~/.profile, ~/.local/share, ...) and is handled by
+# deploy_home() instead.
+EXCLUDE=(install home)
 
 DO_PACKAGES=1
 DO_SERVICES=1
@@ -144,6 +148,29 @@ deploy_dotfiles() {
   shopt -u nullglob
 }
 
+deploy_home() {
+  log "Linking files from home/ into $HOME"
+  [[ -d "$HOME_ITEMS_DIR" ]] || return 0
+  local ts src rel target
+  ts="$(date +%Y%m%d-%H%M%S)"
+  while IFS= read -r -d '' src; do
+    rel="${src#"$HOME_ITEMS_DIR"/}"
+    target="$HOME/$rel"
+    mkdir -p "$(dirname "$target")"
+    if [[ -L "$target" ]]; then
+      ln -sfn "$src" "$target"
+      ok "relinked ~/$rel"
+    elif [[ -e "$target" ]]; then
+      mv "$target" "$target.bak.$ts"
+      ln -sfn "$src" "$target"
+      ok "backed up existing ~/$rel and linked"
+    else
+      ln -sfn "$src" "$target"
+      ok "linked ~/$rel"
+    fi
+  done < <(find "$HOME_ITEMS_DIR" -type f -print0)
+}
+
 setup_shell() {
   log "Setting default shell"
   local fish_bin
@@ -197,6 +224,7 @@ main() {
   fi
   if (( DO_DOTFILES )); then
     deploy_dotfiles
+    deploy_home
     setup_shell
   fi
   (( DO_PHP )) && configure_php

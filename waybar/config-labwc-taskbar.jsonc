@@ -1,0 +1,19 @@
+{
+  "expand-center": false,
+  "height": 32,
+  "position": "bottom",
+  "modules-left": [],
+  "modules-center": [
+    "wlr/taskbar"
+  ],
+  "modules-right": [],
+  "wlr/taskbar": {
+    "format": "{icon} {app_id}",
+    "max-length": 18,
+    "icon-size": 16,
+    "on-click": "minimize-raise",
+    "on-click-middle": "close",
+    "on-click-right": "fullscreen",
+    "tooltip-format": "{title}"
+  }
+}

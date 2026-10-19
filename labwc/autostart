@@ -1,3 +1,4 @@
-/home/pulu/.local/bin/matugen-wallpaper >/dev/null 2>&1 &
-waybar >/dev/null 2>&1 &
+wlr-randr --output eDP-1 --scale 1 >/dev/null 2>&1 &
+/home/pulu/.local/bin/matugen-wallpaper >/dev/null 2>&1
+/usr/bin/waybar -c /home/pulu/.config/waybar/config-labwc.jsonc >/dev/null 2>&1 &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 >/dev/null 2>&1 &

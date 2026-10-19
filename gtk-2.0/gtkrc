@@ -1,0 +1,4 @@
+# GTK+2.0 settings
+gtk-theme-name = "Breeze"
+gtk-icon-theme-name = "Papirus"
+gtk-font-name = "Iosevka NF 12"

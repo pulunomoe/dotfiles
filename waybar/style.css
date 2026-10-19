@@ -1,59 +1,135 @@
 @import url("file:///etc/xdg/waybar/style.css");
 @import "colors.css";
 
+/* Matches the labwc window style: 1px lines, square corners, no shadows,
+   solid @primary for active/focused/urgent, everything else flat and unboxed. */
 * {
   font-family: "Iosevka NF";
-  font-size: 11pt;
+  font-size: 14pt;
+  min-height: 0;
 }
 
 window#waybar {
   background-color: @bg;
   color: @fg;
-  border-bottom: 0;
+  border: none;
+  border-radius: 0;
 }
 
-#workspaces button {
-  color: @fg;
+/* Single 1px labwc-style line on the screen-facing edge */
+window#waybar.top {
+  border-bottom: 1px solid @outline;
 }
 
-#workspaces button:hover {
-  background: alpha(@fg, 0.12);
-  box-shadow: inset 0 0 @bg;
+window#waybar.bottom {
+  border-top: 1px solid @outline;
 }
 
-#workspaces button.focused {
-  background-color: @primary;
-  box-shadow: inset 0 0 @bg;
-  color: @on_primary;
-}
-
-#workspaces button.urgent {
-  background-color: @error;
-}
-
-#mode {
-  background-color: @primary;
-  box-shadow: inset 0 0 @bg;
-  color: @on_primary;
-}
-
+/* Flat, boxless modules */
+#workspaces,
+#taskbar,
+#mode,
 #clock,
 #cpu,
 #temperature,
 #memory,
-#network.wifi,
+#network,
 #battery,
-#battery.charging,
-#battery.plugged,
+#power-profiles-daemon,
+#backlight,
+#wireplumber,
+#tray {
+  background-color: transparent;
+  color: @fg;
+  border: none;
+  border-radius: 0;
+  margin: 0;
+  padding: 0 14px;
+  box-shadow: none;
+  transition: background-color 60ms ease, color 60ms ease;
+}
+
+/* Thin separators between the right-side indicators */
+
+#workspaces {
+  margin-right: 0;
+  padding-left: 0;
+  padding-right: 12px;
+}
+
+/* Workspaces / taskbar entries stay flat; only state changes fill them */
+#workspaces button,
+#taskbar button {
+  background-color: transparent;
+  color: @on_surface_variant;
+  border: none;
+  border-radius: 0;
+  margin: 0;
+  padding: 0 12px;
+  box-shadow: none;
+  transition: background-color 60ms ease, color 60ms ease;
+}
+
+#workspaces button {
+  min-width: 28px;
+  padding: 0 12px;
+}
+
+#taskbar button {
+  min-width: 180px;
+}
+
+#workspaces button:hover,
+#taskbar button:hover {
+  background-color: alpha(@primary, 0.18);
+  color: @primary;
+  box-shadow: none;
+}
+
+#workspaces button.focused,
+#workspaces button.active,
+#taskbar button.active {
+  background-color: @primary;
+  color: @on_primary;
+  box-shadow: none;
+}
+
+#workspaces button.urgent {
+  background-color: @error;
+  color: @on_primary;
+  box-shadow: none;
+}
+
+#mode {
+  background-color: @primary;
+  color: @on_primary;
+}
+
+/* Keep power-profiles-daemon flat in every profile (overrides the default
+   red/blue/green state backgrounds from /etc/xdg/waybar/style.css) */
 #power-profiles-daemon.performance,
 #power-profiles-daemon.balanced,
-#power-profiles-daemon.power-saver,
-#backlight,
-#wireplumber {
+#power-profiles-daemon.power-saver {
   background-color: transparent;
   color: @fg;
 }
 
-#network.disconnected {
+#taskbar {
   background-color: transparent;
+  color: @fg;
+  margin: 0;
+  padding: 0 12px;
+}
+
+#network.disconnected {
+  color: @on_surface_variant;
+}
+
+/* Single separators: workspaces | taskbar, and stats/tray | clock */
+#taskbar {
+  border-left: 1px solid alpha(@outline, 0.35);
+}
+
+#clock {
+  border-left: 1px solid alpha(@outline, 0.35);
 }

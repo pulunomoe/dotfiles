@@ -28,6 +28,17 @@
         <action name="ToggleOmnipresent" />
       </item>
     </menu>
+    <menu id="resize-menu" label="Resize">
+      <item label="800x600">
+        <action name="ResizeTo" width="800" height="600" />
+      </item>
+      <item label="1920x1080">
+        <action name="ResizeTo" width="1920" height="1080" />
+      </item>
+      <item label="2560x1440">
+        <action name="ResizeTo" width="2560" height="1440" />
+      </item>
+    </menu>
     <separator />
     <item label="Close">
       <action name="Close" />
@@ -35,42 +46,73 @@
   </menu>
 
   <menu id="root-menu">
-    <menu id="net" label="Internet">
-      <item label="Firefox">
-        <action name="Execute" command="flatpak run org.mozilla.firefox" />
+    <menu id="acc" label="Accessories" icon="applications-accessories">
+      <item label="Archive Manager" icon="xarchiver">
+        <action name="Execute" command="xarchiver" />
       </item>
-      <item label="Discord">
-        <action name="Execute" command="flatpak run com.discordapp.discord" />
+      <item label="Image Viewer" icon="ristretto">
+        <action name="Execute" command="ristretto" />
       </item>
-    </menu>
-    <menu id="app" label="Applications">
-      <item label="IntelliJ IDEA">
-        <action name="Execute" command="/home/pulu/.local/share/JetBrains/Toolbox/apps/intellij-idea-ultimate/bin/idea" />
-      </item>
-      <item label="OnlyOffice">
-        <action name="Execute" command="flatpak run org.onlyoffice.desktopeditors" />
-      </item>
-    </menu>
-    <menu id="acc" label="Accesories">
-      <item label="Text Editor">
+      <item label="Text Editor" icon="mousepad">
         <action name="Execute" command="mousepad" />
       </item>
     </menu>
+    <menu id="dev" label="Development" icon="jetbrains-toolbox">
+      <item label="IntelliJ IDEA" icon="intellij-idea-ultimate">
+        <action name="Execute" command="/home/pulu/.local/share/JetBrains/Toolbox/apps/intellij-idea-ultimate/bin/idea" />
+      </item>
+      <item label="JetBrains Toolbox" icon="jetbrains-toolbox">
+        <action name="Execute" command="/home/pulu/Documents/jetbrains-toolbox-3.8.1.88030/bin/jetbrains-toolbox" />
+      </item>
+      <item label="Zed" icon="zed">
+        <action name="Execute" command="zeditor" />
+      </item>
+    </menu>
+    <menu id="net" label="Internet" icon="applications-internet">
+      <item label="Chromium" icon="chromium">
+        <action name="Execute" command="chromium" />
+      </item>
+      <item label="Discord" icon="discord">
+        <action name="Execute" command="discord" />
+      </item>
+      <item label="Firefox" icon="firefox">
+        <action name="Execute" command="firefox" />
+      </item>
+    </menu>
+    <menu id="office" label="Office" icon="libreoffice-main">
+      <item label="Base" icon="libreoffice-base">
+        <action name="Execute" command="libreoffice --base" />
+      </item>
+      <item label="Calc" icon="libreoffice-calc">
+        <action name="Execute" command="libreoffice --calc" />
+      </item>
+      <item label="Draw" icon="libreoffice-draw">
+        <action name="Execute" command="libreoffice --draw" />
+      </item>
+      <item label="Impress" icon="libreoffice-impress">
+        <action name="Execute" command="libreoffice --impress" />
+      </item>
+      <item label="Math" icon="libreoffice-math">
+        <action name="Execute" command="libreoffice --math" />
+      </item>
+      <item label="Writer" icon="libreoffice-writer">
+        <action name="Execute" command="libreoffice --writer" />
+      </item>
+    </menu>
     <separator />
-    <item label="File Manager">
-      <action name="Execute" command="pcmanfm" />
+    <item label="File Manager" icon="thunar">
+      <action name="Execute" command="thunar" />
     </item>
-    <item label="Terminal">
+    <item label="Terminal" icon="foot">
       <action name="Execute" command="foot" />
     </item>
     <separator />
-    <item label="Reconfigure">
+    <item label="Reconfigure" icon="view-refresh">
       <action name="Reconfigure" />
     </item>
-    <item label="Exit">
+    <item label="Exit" icon="application-exit">
       <action name="Exit" />
     </item>
   </menu>
 
 </openbox_menu>
-
